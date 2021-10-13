@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bar
+spec:
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    spec:
+      containers:
+        - name: bar
+          image: nginxdemos/hello
+          ports:
+            - containerPort: 80
+              name: "http"
+              protocol: "TCP"
+          env:
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: TEST
+              value: foobar-$(POD_NAME)
