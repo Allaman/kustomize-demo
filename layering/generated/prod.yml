@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: bff
+    app.kubernetes.io/part-of: frontend
+    env: prod
+  name: bff
+  namespace: team1
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: editor
+    app.kubernetes.io/part-of: backend
+    env: prod
+  name: editor
+  namespace: team1
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: engine
+    app.kubernetes.io/part-of: backend
+    env: prod
+  name: engine
+  namespace: team1
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: scraper-bar
+    app.kubernetes.io/part-of: backend
+    env: prod
+  name: scraper-bar
+  namespace: team1
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: scraper-foo
+    app.kubernetes.io/part-of: backend
+    env: prod
+  name: scraper-foo
+  namespace: team1
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  labels:
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: ui
+    app.kubernetes.io/part-of: frontend
+    env: prod
+  name: ui
+  namespace: team1
