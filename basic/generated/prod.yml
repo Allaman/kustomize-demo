@@ -3,7 +3,10 @@ kind: ServiceAccount
 metadata:
   labels:
     app.kubernetes.io/name: bar
+    criticality: high
     env: prod
+    msg: not in selector
+    version: 0.9.0
   name: bar
   namespace: app
 ---
@@ -21,7 +24,10 @@ kind: Service
 metadata:
   labels:
     app.kubernetes.io/name: bar
+    criticality: high
     env: prod
+    msg: not in selector
+    version: 0.9.0
   name: bar
   namespace: app
 spec:
@@ -31,6 +37,7 @@ spec:
     targetPort: 80
   selector:
     app.kubernetes.io/name: bar
+    criticality: high
     env: prod
   type: ClusterIP
 ---
@@ -57,7 +64,10 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/name: bar
+    criticality: high
     env: prod
+    msg: not in selector
+    version: 0.9.0
   name: bar
   namespace: app
 spec:
@@ -65,6 +75,7 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: bar
+      criticality: high
       env: prod
   strategy:
     rollingUpdate:
@@ -75,6 +86,7 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: bar
+        criticality: high
         env: prod
     spec:
       containers:
