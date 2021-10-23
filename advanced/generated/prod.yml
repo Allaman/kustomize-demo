@@ -1,0 +1,50 @@
+apiVersion: integreatly.org/v1alpha1
+kind: GrafanaNotifier
+metadata:
+  labels:
+    env: prod
+  name: alert-channel
+spec:
+  name: alert-channel
+  notifier:
+    isDefault: false
+    name: alert-channel
+    orgId: 1
+    settings:
+      mentionUsers: '@channel'
+      url: https://example.com
+      username: production
+    type: slack
+    uid: abcdef
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    env: prod
+  name: private-ingress
+spec:
+  rules:
+  - host: rootknecht.net
+    http:
+      paths:
+      - backend:
+          serviceName: foo
+          servicePort: 8080
+        path: /login
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    env: prod
+  name: public-ingress
+spec:
+  rules:
+  - host: rootknecht.net
+    http:
+      paths:
+      - backend:
+          serviceName: bar
+          servicePort: 8080
+        path: /

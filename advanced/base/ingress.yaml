@@ -1,0 +1,28 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: private-ingress
+spec:
+  rules:
+    - host: dummy
+      http:
+        paths:
+          - backend:
+              serviceName: foo
+              servicePort: 8080
+            path: /login
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: public-ingress
+spec:
+  rules:
+    - host: dummy
+      http:
+        paths:
+          - backend:
+              serviceName: bar
+              servicePort: 8080
+            path: /

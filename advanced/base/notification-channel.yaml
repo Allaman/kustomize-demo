@@ -1,0 +1,16 @@
+---
+apiVersion: integreatly.org/v1alpha1
+kind: GrafanaNotifier
+metadata:
+  name: alert-channel
+spec:
+  name: alert-channel
+  notifier:
+    name: alert-channel
+    type: slack
+    orgId: 1
+    isDefault: false
+    uid: abcdef
+    settings:
+      url: "https://example.com"
+      mentionUsers: "@channel"
