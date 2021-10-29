@@ -17,7 +17,7 @@ spec:
     type: slack
     uid: abcdef
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
@@ -25,7 +25,7 @@ metadata:
   name: private-ingress
 spec:
   rules:
-  - host: mijope.de
+  - host: dummy
     http:
       paths:
       - backend:
@@ -33,7 +33,7 @@ spec:
           servicePort: 8080
         path: /login
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
@@ -41,7 +41,7 @@ metadata:
   name: public-ingress
 spec:
   rules:
-  - host: mijope.de
+  - host: dummy
     http:
       paths:
       - backend:

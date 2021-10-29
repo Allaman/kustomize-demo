@@ -9,19 +9,19 @@ patches:
   - path: hostname.yaml
     target:
       group: networking.k8s.io
-      version: v1beta1
+      version: v1
       kind: Ingress
       name: public-ingress
   - path: hostname.yaml
     target:
       group: networking.k8s.io
-      version: v1beta1
+      version: v1
       kind: Ingress
       name: private-ingress
 patchesJson6902:
   - target:
       group: integreatly.org
-      version: v1alpha1
+      version: v1
       kind: GrafanaNotifier
       name: alert-channel
     path: notification-channel.yaml
