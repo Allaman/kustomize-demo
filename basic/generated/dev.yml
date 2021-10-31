@@ -138,6 +138,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: ENVIRONMENT
+          value: dev
         - name: POD_NAME
           valueFrom:
             fieldRef:

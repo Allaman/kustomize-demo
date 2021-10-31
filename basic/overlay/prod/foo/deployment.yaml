@@ -9,6 +9,9 @@ spec:
     spec:
       containers:
         - name: foo
+          env:
+            - name: ENVIRONMENT
+              value: prod
           resources:
             requests:
               memory: "200Mi"
