@@ -13,11 +13,10 @@ spec:
     settings:
       mentionUsers: '@channel'
       url: https://example.com
-      username: production
     type: slack
     uid: abcdef
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
@@ -33,7 +32,7 @@ spec:
           servicePort: 8080
         path: /login
 ---
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   labels:
