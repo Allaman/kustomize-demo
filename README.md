@@ -1,6 +1,6 @@
 # Demonstration of Kustomize
 
-This is the repository with the examples mentioned in my blog post to Kustomize.
+This is the repository with the examples mentioned in my [blog post](https://rootknecht.net/blog/kustomize/)
 
 [basic](basic) illustrates a simple use case for Kustomize.
 
